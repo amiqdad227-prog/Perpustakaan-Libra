@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Member extends Model
 {
-    /** @use HasFactory<MemberFactory> */
+    
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
