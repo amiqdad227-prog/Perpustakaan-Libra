@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(RolePermissionSeeder::class);
 
-        // ── Users ──
+      
         $admin = User::updateOrCreate(
             ['email' => 'admin@library.test'],
             ['name' => 'Administrator', 'password' => Hash::make('password')]
@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
         );
         $petugas->assignRole('Petugas');
 
-        // ── Kategori (dari GENRE buku .sql) ──
+        
         $novel      = Category::updateOrCreate(['name' => 'Novel'],        ['description' => 'Koleksi karya fiksi dan sastra populer.']);
         $sastra     = Category::updateOrCreate(['name' => 'Sastra'],       ['description' => 'Karya sastra klasik dan modern.']);
         $pengembangan = Category::updateOrCreate(['name' => 'Pengembangan Diri'], ['description' => 'Buku motivasi dan pengembangan diri.']);
@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
         $hukum      = Category::updateOrCreate(['name' => 'Hukum'],        ['description' => 'Buku ilmu hukum dan perundangan.']);
         $akademik   = Category::updateOrCreate(['name' => 'Akademik'],     ['description' => 'Buku teks dan referensi akademik.']);
 
-        // ── Buku (dari tabel buku .sql) ──
+       
         $books = collect([
             Book::updateOrCreate(['title' => 'Laskar Pelangi'],
                 ['category_id' => $novel->id, 'author' => 'Andrea Hirata', 'publisher' => 'Bentang Pustaka', 'publication_year' => 2005, 'stock' => 5, 'cover_image' => null]),
@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
                 ['category_id' => $keuangan->id, 'author' => 'Morgan Housel', 'publisher' => 'Gramedia', 'publication_year' => 2022, 'stock' => 4, 'cover_image' => null]),
         ]);
 
-        // ── Anggota (dari tabel anggota .sql) ──
+       
         $members = collect([
             Member::updateOrCreate(['member_code' => 'KA001'], ['name' => 'Andi Pratama',     'address' => 'Jl. Merdeka No. 12, Jakarta',          'phone' => '081234567890']),
             Member::updateOrCreate(['member_code' => 'KA002'], ['name' => 'Siti Rahayu',      'address' => 'Jl. Sudirman No. 5, Bandung',           'phone' => '082345678901']),
@@ -118,14 +118,14 @@ class DatabaseSeeder extends Seeder
             Member::updateOrCreate(['member_code' => 'KA020'], ['name' => 'Cantika Dewi',     'address' => 'Jl. Pajajaran No. 4, Bandung',          'phone' => '082123456789']),
         ]);
 
-        // ── Favorit (Many-to-Many) ──
+       
         $members[0]->favoriteBooks()->syncWithoutDetaching([$books[0]->id, $books[2]->id]);
         $members[1]->favoriteBooks()->syncWithoutDetaching([$books[1]->id, $books[9]->id]);
         $members[2]->favoriteBooks()->syncWithoutDetaching([$books[3]->id]);
         $members[4]->favoriteBooks()->syncWithoutDetaching([$books[7]->id, $books[10]->id]);
         $members[6]->favoriteBooks()->syncWithoutDetaching([$books[4]->id]);
 
-        // ── Peminjaman ──
+       
         $loan1 = Loan::withoutEvents(fn () => Loan::updateOrCreate(
             ['member_id' => $members[0]->id, 'loan_date' => now()->subDays(5)->toDateString()],
             ['due_date' => now()->addDays(2)->toDateString(), 'status' => LoanStatus::Borrowed, 'returned_at' => null]
