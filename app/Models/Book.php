@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Book extends Model
 {
-    /** @use HasFactory<BookFactory> */
+   
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
