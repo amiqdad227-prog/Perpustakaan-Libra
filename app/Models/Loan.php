@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Loan extends Model
 {
-    /** @use HasFactory<LoanFactory> */
+    
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
