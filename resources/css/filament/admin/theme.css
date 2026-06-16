@@ -1,0 +1,40 @@
+/* Navbar atas */
+.fi-topbar {
+    background-color: #001F5B !important;
+}
+
+/* Sidebar */
+.fi-sidebar {
+    background-color: #001F5B !important;
+}
+
+/* Teks dan icon di sidebar */
+.fi-sidebar-nav-group-label,
+.fi-sidebar-item-label {
+    color: #fff !important;
+}
+
+/* Icon sidebar */
+.fi-sidebar-item-icon {
+    color: #93C5FD !important;
+}
+
+/* Item sidebar active */
+.fi-sidebar-item.fi-active .fi-sidebar-item-label {
+    color: #fff !important;
+}
+
+.fi-sidebar-item:hover .fi-sidebar-item-label {
+    color: #93C5FD !important;
+}
+
+/* Brand name */
+.fi-logo {
+    color: #fff !important;
+}
+
+/* Topbar icons & text */
+.fi-topbar .fi-icon-btn,
+.fi-topbar svg {
+    color: #fff !important;
+}
