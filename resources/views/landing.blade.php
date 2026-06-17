@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libra</title>
+    <title>Libra Web</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; color: #1a1a1a; }
@@ -109,13 +109,13 @@
 <nav>
     <div class="nav-brand">
         <svg width="22" height="22" fill="none" stroke="#ffffff" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        Libra
+        Libra web
     </div>
     <button class="btn-nav" onclick="openModal()">Masuk</button>
 </nav>
 
 <div class="hero">
-    <h1>Selamat datang di Libra</h1>
+    <h1>Selamat datang di Libra Web</h1>
     <p>Temukan ribuan koleksi buku pilihan. Pinjam, baca, dan perluas wawasanmu bersama kami.</p>
     <a href="#koleksi" class="btn-hero">Lihat koleksi buku</a>
 </div>
@@ -263,7 +263,7 @@
 </div>
 
 <footer>
-    © {{ date('Y') }} Libra. All rights reserved.
+    © {{ date('Y') }} Libra Web. All rights reserved.
 </footer>
 
 <script>
